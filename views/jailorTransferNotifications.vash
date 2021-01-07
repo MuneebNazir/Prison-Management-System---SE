@@ -1,0 +1,44 @@
+@html.extend('layout', function(model) {
+@html.block('content', function(model) {
+<h2>@model.title</h2>
+<p> Transfers Notifications </p>
+<br>
+<div class="alert alert-danger" id="alertBox" style="display: none" role="alert"></div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Notification</th>
+
+        <th>Status</th>
+
+
+        <th>Actions</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @model.listOfTransfers.forEach((record, index)=>{
+
+    <tr>
+        <th>@{ var pos = index + 1; } @pos</th>
+        <td>Prisoner No. @record.PrisonerID has been requested for a transfer to @record.NewPrisonName By Jail Officer No. @record.JailOfficerID</td>
+        <td>@record.TypeName</td>
+        <td>
+            <form method="post" action="/transfersHandler/@record.ID-3">
+                <button type="submit" class="button">Approve Transfer</button>
+            </form>
+        </td>
+        <td>
+            <form method="post" action="/transfersHandler/@record.ID-2">
+                <button type="submit" class="button">Disapprove Transfer</button>
+            </form>
+        </td>
+    </tr>
+
+    })
+    </tbody>
+</table>
+})
+})

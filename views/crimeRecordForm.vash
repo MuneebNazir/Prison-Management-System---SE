@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Prison Management System Project - DBMS LAB -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/seal-of-the-federal-bureau-of-prisons.svg-122x122.png"
+          type="image/x-icon">
+    <meta name="description" content="FBP - User Login Page">
+    <title>Request Prisoner Transfer</title>
+    <link rel="stylesheet" href="assets/web/assets/prison-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/prison/css/mbr-additional.css" type="text/css">
+
+    <style>
+        .button {
+            background-color: #DC2345;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            width: 250px;
+
+        }
+
+        .button {
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+        }
+
+        .button:hover {
+            background-color: #8F0B24;
+            color: white;
+        }
+
+        .sansserif {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- Navbar Section -->
+<section class="menu cid-r5IjW2S3Cd" once="menu" id="menu1-4">
+    <nav
+            class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                    <span class="navbar-logo">
+                    </span>
+                <span class="navbar-caption-wrap">
+                        <a class="navbar-caption text-white display-5" href="/index">
+                            Prison Management System
+                        </a>
+                    </span>
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="/index">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="/index">
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        About Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="card">
+
+                <div class="alert alert-danger" id="alertBox" style="display: none" role="alert"></div>
+
+                <h3 class="card-header bg-warning text-white">Enter Criminal Record</h3>
+
+                <div class="card-body">
+                    <form method="post" action="/crimeRecordPost">
+                        <!--   <dl class="row">
+                               <dt class="col-12 col-sm-4">Enter Name:</dt>
+                               <dd class="col col-sm col-md">
+
+                                   <div class="form-row">
+
+                                       <input type="name" class="form-control form-control-sm mr-1"
+                                              id="exampleInputName3" name="prisonerName" placeholder="Prisoner Name">
+                                   </div>
+
+                           </dl>-->
+
+
+                        <dl class="row">
+                            <dt class="col-12 col-sm-4">Select Crime Danger level:</dt>
+                            <dd class="col col-sm col-md">
+
+                                <div class="form-row">
+                                    <label class="sr-only" ></label>
+                                    <select id="transferRequestStatus1" name="dangerLevel">
+                                        <option value="1">Mildly Dangerous</option>
+                                        <option value="2">Moderately Dangerous</option>
+                                        <option value="3">Extremely Dangerous</option>
+                                    </select>
+                                </div>
+
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-12 col-sm-4">Enter Prisoner ID:</dt>
+                            <dd class="col col-sm col-md">
+
+                                <div class="form-row">
+                                    <label class="sr-only" for="exampleInputPrisonerID"></label>
+                                    <input type="text" class="form-control form-control-sm mr-1"
+                                           id="exampleInputPrisonerID" name="prisonerId" placeholder="Prisoner ID">
+                                </div>
+
+                            </dd>
+                        </dl>
+
+
+                        <dl class="row">
+                            <dt class="col-12 col-sm-4">Enter the Date of Crime:</dt>
+                            <dd class="col col-sm col-md">
+
+                                <div class="form-row">
+                                    <label class="sr-only"></label>
+                                    <input type="date" class="form-control form-control-sm mr-1"
+                                           id="transferDate3" name="crimeDate" placeholder="Crime Date">
+                                </div>
+
+                            </dd>
+                        </dl>
+
+
+                        <dl class="row">
+                            <dt class="col-12 col-sm-4">Enter Crime:</dt>
+                            <dd class="col col-sm col-md">
+
+                                <div class="form-row">
+                                    <label class="sr-only"></label>
+                                    <input type="text" class="form-control form-control-sm mr-1"
+                                           id="exampleInputCrimeName3" name="crime" placeholder="Crime">
+                                </div>
+
+                            </dd>
+                        </dl>
+
+                        <dl class="row">
+                            <dt class="col-12 col-sm-4">Enter Crime Details:</dt>
+                            <dd class="col col-sm col-md">
+
+                                <div class="form-row">
+                                    <label class="sr-only" for="exampleInputCrimeDetails"></label>
+                                    <input type="text" class="form-control form-control-sm mr-1"
+                                           id="exampleInputCrimeDetails" name="crimeDetails" placeholder="Crime Details(Optional)">
+                                </div>
+
+                            </dd>
+                        </dl>
+
+
+                        <div class="col-md-8">
+                            <dd class="col col-sm col-md">
+
+                                <div class="form-row">
+                                    <button type="submit" class="btn btn-primary">Add Crime History</button>
+                                </div>
+
+                            </dd>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="engine"><a href="#">bootstrap website templates</a></section>
+
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(() => {
+        let params = new URLSearchParams(location.search);
+        console.log(params);
+        let q = params.get("msg");
+        console.log(q);
+        if (q !== undefined && q !== null && q !== '') {
+            let ab = $("#alertBox");
+            ab.html(q);
+            ab.show();
+        }
+    });
+</script>
+<script src="assets/popper/popper.min.js"></script>
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/dropdown/js/script.min.js"></script>
+<script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+<script src="assets/theme/js/script.js"></script>
+</body>
+
+</html>
