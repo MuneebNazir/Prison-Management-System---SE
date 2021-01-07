@@ -1,0 +1,50 @@
+@html.extend('layout', function(model) {
+@html.block('content', function(model) {
+<h2>@model.title</h2>
+<p> List of Officers </p>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Type</th>
+
+        <th></th>
+        <th>Actions</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @model.listOfUsers.forEach((record, index)=>{
+
+    <tr>
+        <th>@{ var pos = index + 1; } @pos</th>
+        <td>@record.FirstName</td>
+        <td>@record.LastName</td>
+        <td>@record.TypeName</td>
+        <td>
+            <form method="post" action="Prisoner_edit.html">
+                <button type="submit" class="button">Edit</button>
+            </form>
+        </td>
+        <td>
+            <form method="post" action="Prisoner_edit.html">
+                <button type="submit" class="button">Delete</button>
+            </form>
+        </td>
+        <td>
+            <form method="post" action="Transfer_request.html">
+                <button type="submit" class="button">View</button>
+            </form>
+        </td>
+    </tr>
+
+    })
+    </tbody>
+</table>
+})
+})

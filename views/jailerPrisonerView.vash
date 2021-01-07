@@ -1,0 +1,39 @@
+@html.extend('layout', function(model) {
+@html.block('content', function(model) {
+<h2>@model.title</h2>
+<p> Search Prisoner </p>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!--<th></th>-->
+        <th>Type</th>
+
+        <th>Actions</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @model.listOfPrisoners.forEach((record, index)=>{
+
+    <tr>
+        <th>@{ var pos = index + 1; } @pos</th>
+        <td>@record.Name</td>
+        <td>@record.TypeName</td>
+        <td>
+            <form method="get" action="/crimeHistory">
+                <button type="submit" class="button">View Crime History</button>
+            </form>
+        </td>
+
+    </tr>
+
+    })
+    </tbody>
+</table>
+})
+})

@@ -1,0 +1,38 @@
+@html.extend('layout', function(model) {
+@html.block('content', function(model) {
+<h2>@model.title</h2>
+<p> Criminal's History in Jail XYZ </p>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Danger Level</th>
+        <!--<th></th>-->
+        <th>Prisoner ID:</th>
+
+        <th>Date of Crime</th>
+        <th>Crime</th>
+        <th>Crime Details</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @model.listOfCrimes.forEach((record, index)=>{
+
+    <tr>
+        <th>@{ var pos = index + 1; } @pos</th>
+
+        <td>@record.TypeName</td>
+        <td>@record.PrisonerID</td>
+        <td>@record.DateCommitted</td>
+        <td>@record.Crime</td>
+        <td>@record.CrimeDetails</td>
+
+    </tr>
+
+    })
+    </tbody>
+</table>
+})
+})
