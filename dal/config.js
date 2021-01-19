@@ -1,14 +1,19 @@
 const config = {
-    user: 'user',
-    password: '123456',
-    server: 'DESKTOP-CHMNVAU\\SQLEXPRESS',
-    database: 'Prison_Database',
+
+    // user: 'user',
+    // password: '123456',
+    // server: 'DESKTOP-CHMNVAU\\SQLEXPRESS',
+    // database: 'Prison_Database',
+    user: 'admin',
+    password: 'djAGM~2f-C_FLHR',
+    server: 'prisondb.cxkh2eowwood.us-east-1.rds.amazonaws.com',
+    database: 'prisondb',
+    port: 1433,
 }
 
 const types = {
     1: "Jailor",
-    2: "Court Officer",
-    3: "Jail Officer",
+    2: "Jail Officer",
 };
 
 const dangerlevel = {
