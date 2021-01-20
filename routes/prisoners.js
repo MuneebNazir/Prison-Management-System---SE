@@ -1,6 +1,6 @@
 
 var express = require('express');
-const getPrisoners = require("../dal/Prisoners");
+const getPrisoners = require("../dal/prisoners");
 var router = express.Router();
 const {dangerlevel} = require('../dal/config')
 

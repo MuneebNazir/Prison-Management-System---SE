@@ -1,5 +1,5 @@
 var express = require('express');
-//const getPrisoners = require("../dal/Prisoners");
+//const getPrisoners = require("../dal/prisoners");
 const getTransfers = require("../dal/transfersList");
 const getComplaints = require("../dal/complaintsList");
 var router = express.Router();
