@@ -2,9 +2,6 @@
   "name": "prisonms",
   "version": "0.0.0",
   "private": true,
-  "engines" : {
-    "node" : ">=14.15.3"
-  },
   "scripts": {
     "start": "node ./bin/www"
   },
